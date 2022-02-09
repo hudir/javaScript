@@ -35,3 +35,22 @@ const  <---- i can't be changed/reassign.
 typeof()  ----> think about me when debug
 
     console.log(typeof true);   //-----> we got boolean.
+
+objects
+
+    let person = {
+        firstName: 'John',
+        age: 23,
+        isRetired : false
+    }
+
+string
+ 
+    let firstName = `Mike`;
+    console.log (`hello my name is ${firstName}. `);
+
+Boolean
+
+    let logic1 = 5 < 3; //false
+
+    const = birthDate; // get SyntaxError
