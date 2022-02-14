@@ -56,11 +56,11 @@ specNum > 19 ? console.log(`Exercise9 is ${(specNum - 19) * 2}`) : console.log(`
 
 
 // BONUS CHALLENGE: Make a variable for firstName and age and give each variable values. Create an if/else statement to check whether the person's age is less than 13. If so, print "firstName is a child". If the age is equal to or more than 13 and less than 20, print "firstName is a teenager". If the person's age is equal to and more than 20 and less than 30, then print "firstName is a young adult". If none of these conditions apply, print "firstName is a adult".
-const firstName = 'hudir';
-const howOld = (age) => {
+const howOld = (firstName, age) => {
     age < 13 ? console.log(firstName, 'is a child') : age >= 13 && age < 20 ? console.log(firstName, 'is a teenager') : age >= 20 && age < 30 ? console.log(firstName, 'is a young adult') : console.log(firstName, 'is a adult');
 }
-howOld(10);
+howOld('blackCat', 29);
+howOld('Ross', 87);
 
 // BONUS CHALLENGE: Play around with each of your results, i.e., make sure they are dynamic to different inputs; is there a more efficient way of writing your code?; etc.
 
@@ -96,22 +96,53 @@ const higher = markBmi > johnBmi;
 console.log(`Is Mark's BMI higher than John's? It is ${higher}.`);
 
 // Create a statement which prints the name and BMI of the person with the highest BMI.
-higher ? console.log('Mark has higher BMI --->', markBmi) : console.log('John has equal or higher BMI --->', johnBmi)
+higher ? console.log('Mark has higher BMI --->', markBmi) : console.log('John has equal or higher BMI --->', johnBmi);
 
 
 
 //2. Declare a variable named isDog. If true, print 'pat, pat' and if not, print 'find me a dog to pat!'
+const isDog = true;
+isDog ? console.log('is a Dog? pat, pat') : console.log('is a Dog? find me a dog to pat!');
 
 //3. Declare a variable named speedCheck. If speedlimit is 50km/h, and your speed is above that, print 'you're going too fast!'. If speed is lower than 50km/h, print 'You're driving below the speed limit, Oma'.
+let yourSpeed, speedlimit;
+const speedCheck = (yourSpeed, speedlimit) => {
+   return yourSpeed > speedlimit ?  `you're going too fast!` :  yourSpeed < speedlimit ? `You're driving below the speed limit, Oma` : 'You are driving just at right speed!!!';
+}
+console.log(speedCheck(100, 100));
 
 // 4.Declare a variable named age. If age is below 16, print "serve butter beer". Otherwise print "serve beer".
+const beer = (age) => {
+    return age < 16 ? "serve butter beer" : "serve beer"
+};
+console.log(beer(11));
 
 //5. Declare a variable named isStudent. If true, print "Ticket costs €5,00". If false, print "Ticket costs €12,00".
+const buyTicket = (isStudent) => {
+    return isStudent ? "Ticket costs €5,00" : "Ticket costs €12,00";
+};
+console.log(buyTicket(true));
 
 //6. Declare a variable named okMarie. Check if there is 'cake' - if so, print "Let them eat cake". If not, print "Oh, bother".
+const okMarie = (marieSay) => { 
+    for (let i = 0; i < marieSay.length - 3; i++) {
+        if (marieSay[i] == 'c' && marieSay[i + 1] == 'a' && marieSay[i + 2] == 'k' && marieSay[i + 3] == 'e') {
+            return "Let them eat cake";
+        }
+    } 
+    return "Oh, bother";   
+};
+console.log(okMarie('Marie becks a big cake'));
+console.log(okMarie('where is Marie?'));
 
 //7. Check if the following numbers are even numbers. Use a ternary and if the number is even print 30 is even, else print that it is odd.
-
+const evenOrOdd = (num) => {
+   return num % 2 == 0 && num > 0 ? num + ' is a even Number' : num % 1 == 0 && num > 0 ? num + ' is a odd Number' : num % 1 != 0 ? `${num}: what am i?` : num + ' is less than zero';
+};
 // 30
 // 939
 // 40.9
+console.log(evenOrOdd(30));
+console.log(evenOrOdd(939));
+console.log(evenOrOdd(40.9));
+console.log(evenOrOdd(-40));
