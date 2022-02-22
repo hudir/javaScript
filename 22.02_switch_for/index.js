@@ -94,3 +94,33 @@ switch(grade) {
     break;
     default: console.log('Pls give a grade form A to F');
 }
+
+for (let i = 0; i < 6 ; i++) {
+    for (let y = 5; y > 0; y--) {
+        console.log('y is', y);
+    }
+    console.log(i);
+}
+
+const str = 'Today is a sunny day.'
+for (let i = 0; i < str.length; i++) {
+    console.log(str[i]);
+};
+
+let str2 = '';
+for (let i = 0; i < str.length; i++) {
+    str2 += str[i];
+    console.log(str2);
+};
+
+let str3 = '';
+for (let i = (str.length - 1); i >= 0 ;i--) {
+    str3 += str[i];
+    console.log(str3);
+};
+
+let arrOfStr = [];
+for (let i = 0; i < str.length; i++) {
+    arrOfStr.push(str[i]);
+};
+console.log(arrOfStr);
