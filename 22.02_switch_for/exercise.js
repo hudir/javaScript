@@ -155,11 +155,51 @@ console.log(isPalindrome('abc'));
 console.log(isPalindrome('abvba'));
 console.log(isPalindrome('abba'));
 console.log(isPalindrome('tarrattarrat')); */
-
+/* 
 let check = 0
 , x = 0
 , word = 'aavbhaa';
+
 for ( x = 0; x < (word.length - 1) / 2 ; x++) {
     word[x] == word[word.length - 1 - x] ? check++ : check = check;
 }
 check == x ? console.log(word, 'is a palindrome') : console.log(word, 'is not a palindrome')
+ */
+
+
+
+function palindrome(str) {
+    str = str.toLowerCase();
+    str = str.split('');
+    console.log(str);
+    for (let i = 0; i < str.length; i++ ) {
+      if (
+        str[i] == '-'
+        || str[i] == '-'
+        || str[i] == ' '
+        || str[i] == '/'
+       // || str[i] == "\\"
+        || str[i] == ','
+        || str[i] == '.'
+        || str[i] == ':'
+        || str[i] == '('
+        || str[i] == ')'
+        || str[i] == '|'
+      ) {
+        str.splice(i, 1);
+        i--;
+        console.log(str);
+      }
+    }
+    let check = 0
+  , x = 0
+    for ( x = 0; x < (str.length - 1) / 2 ; x++) {
+      str[x] == str[str.length - 1 - x] ? check++ : null;
+  }
+   if (check == x) {
+     return true;
+   } 
+    return false;
+  }
+  
+  console.log(palindrome("A man, a plan, a canal. Panama"));
