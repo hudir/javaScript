@@ -71,3 +71,4 @@ const fahrenheitToCelsius = fahrenheit => `${fahrenheit}°F is ${(fahrenheit - 3
 
 // console.log(celsiusToFahrenheit(20));
 // console.log(fahrenheitToCelsius(68));
+
