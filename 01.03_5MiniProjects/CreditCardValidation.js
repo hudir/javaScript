@@ -144,9 +144,10 @@ const luhnAlgorithm = num => {
     };
    // console.log(sum);
     let sumNew = 10 - (+sum.toString()[sum.toString().length - 1]);
-   // console.log(sumNew);
+//    console.log(sumNew);
+//    console.log(+sumNew.toString()[sumNew.toString.length -1])
 
-    if (+arr[0] === sumNew ) {
+    if (+arr[0] === sumNew % 10) {
         let newObi1 = {value: true + ' number: ' + num};
         return newObi1['value'];                
     } else {
@@ -158,6 +159,19 @@ const luhnAlgorithm = num => {
 //  console.log(luhnAlgorithm('66-66-66-66-6666-1665'))
 //  console.log(luhnAlgorithm('1212-1212-1212-1218'))
 //  console.log(luhnAlgorithm('1212-1212-1212-1218'))
+// Example Mastercard credit card number:
+// A Mastercard credit card number starts with number 51, 52, 53, 54 or 55 and the credit card number has total 16 digits:
+
+// 5181975718047403     (16 digits)
+// 5204571199083364     (16 digits)
+// 5322683667269933     (16 digits)
+// 5477754834149242     (16 digits)
+// 5539624233693270     (16 digits)
+ console.log(luhnAlgorithm(5181975718047403))
+ console.log(luhnAlgorithm(5204571199083364))
+ console.log(luhnAlgorithm(5322683667269933))
+ console.log(luhnAlgorithm(5477754834149242))
+ console.log(luhnAlgorithm(5539624233693270))
 
 
 
@@ -190,7 +204,7 @@ const luhnAlgorithm_test = num => {
     let sumNew = 10 - (+sum.toString()[sum.toString().length - 1]);
    // console.log(sumNew);
 
-    if (+arr[0] === sumNew ) {
+    if (+arr[0] === sumNew % 10) {
         let newObi1 = {value: true + ' number: ' + num};
         return newObi1['value'];                
     } else {
@@ -199,5 +213,6 @@ const luhnAlgorithm_test = num => {
     };
 };
 
-console.log(luhnAlgorithm_test('79927398713')); // wikipedia example number
-console.log(luhnAlgorithm_test('79927398717'));
+// console.log(luhnAlgorithm_test('79927398713')); // wikipedia example number
+// console.log(luhnAlgorithm_test('5181975718047403'));
+// console.log(luhnAlgorithm_test('5181975718047403'));
