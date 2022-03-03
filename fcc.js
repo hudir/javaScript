@@ -59,8 +59,36 @@ function getIndexToIns(arr, num, arr2 = []) {
         return getIndexToIns(arr, num, arr2)
       };
     };
-console.log(getIndexToIns([2, 5, 10], 15))
-console.log(getIndexToIns([40, 60, 55, 30], 45));
-console.log(getIndexToIns([], 1));
+// console.log(getIndexToIns([2, 5, 10], 15))
+// console.log(getIndexToIns([40, 60, 55, 30], 45));
+// console.log(getIndexToIns([], 1));
 
+
+function chunkArrayInGroups(arr, size) {
+    let arrN = [];
+    for (let i = 0; i < arr.length;) {
+      let row = [];
+      for (let j = 0; j < size; j++) {
+        row.push(arr[i]);
+        i++
+      };
+      arrN.push(row);
+    };
+    //console.log(arrN)
+     if (arr.length % size == 0)  return arrN;
+     for (let i = size - 1 ; i >= 0; i--) {
+       if (!arrN[arrN.length - 1][i]) {
+        arrN[arrN.length - 1].pop()
+       }; 
+     };
+     return arrN;
+  };
   
+//  console.log(chunkArrayInGroups(["a", "b", "c", "d"], 2));
+//  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));
+// console.log(Boolean(undefined))
+  
+console.log(/Code/.test('freeCodeCamp'))
+let jennyStr = "Jenny8675309";
+let myRegex = /[a-z0-9]/;
+console.log(jennyStr.match(myRegex));
