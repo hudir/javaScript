@@ -264,7 +264,7 @@ const deleteTheSameLetter = chars =>{
     };
     return arr.join("");
 };
-console.log(deleteTheSameLetter('aaaaabasdsdabcdefxyzz'));
+// console.log(deleteTheSameLetter('aaaaabasdsdabcdefxyzz'));
 
 const charsCount = (str, chars = 'abcdefxyz') => {
     let counter = 0;
@@ -282,4 +282,4 @@ const charsCount = (str, chars = 'abcdefxyz') => {
 // console.log(charsCount("ABC"));
 // console.log(charsCount("Zzzz"));
 // console.log(charsCount("Tom"));
-console.log(charsCount("ZZZZ", 'zzzzz'));
+// console.log(charsCount("ZZZZ", 'zzzzz'));
