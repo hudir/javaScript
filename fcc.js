@@ -88,7 +88,31 @@ function chunkArrayInGroups(arr, size) {
 //  console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5], 4));
 // console.log(Boolean(undefined))
   
-console.log(/Code/.test('freeCodeCamp'))
+// console.log(/Code/.test('freeCodeCamp'))
 let jennyStr = "Jenny8675309";
 let myRegex = /[a-z0-9]/;
-console.log(jennyStr.match(myRegex));
+// console.log(jennyStr.match(myRegex));
+
+
+// let quoteSample = "The five boxing wizards jump quickly.";
+// let nonAlphabetRegex = /\W/g; // Change this line
+// let result = quoteSample.match(nonAlphabetRegex).length;
+
+
+// let movieName = "2001: A Space Odyssey";
+// let noNumRegex = /\D/g; // Change this line
+// let result = movieName.match(noNumRegex).length;
+// console.log(movieName.match(noNumRegex))
+
+// let username = "JackOfAllTrades";
+// let userCheck = /^[a-z]([a-z][a-z]*|\d{2,})\d*$/i; // Change this line
+// let result = userCheck.test(username);
+// console.log('BadUs3rnam3'.match(userCheck));
+// console.log('A1'.match(userCheck));
+
+let quit = "qu";
+let noquit = "qt";
+let quRegex= /q(?=u)/;
+let qRegex = /q(?!u)/;
+console.log(quit.match(quRegex));
+noquit.match(qRegex);
