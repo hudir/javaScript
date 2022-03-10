@@ -1,0 +1,3 @@
+- Object.keys(obj)  return Array of keys
+- Object.values(obj)  return Array of values
+- Object.assign(targetObj(will be rewritten), ...sourcesObj)
