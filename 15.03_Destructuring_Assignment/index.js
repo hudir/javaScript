@@ -88,7 +88,7 @@ let person = {
     tel: 1234567
 };
 
-let {name, tel, email} = person;
+// let {name, tel, email} = person;
 
 // console.log('name ==>',name);
 // console.log('email ==>', email);
@@ -109,7 +109,7 @@ let address = {
 };
 
 //       here we do not take email out, but copy it to the new varibel
-const {city, userEmail = email, ...restPorperty} = {...user, ...address};
+const {city, email : userEmail, ...restPorperty} = {...user, ...address};
 
 // console.log('city ==>', city);
 // console.log('userEmail ==>', userEmail);
@@ -185,5 +185,35 @@ function printArguments(...myParams) {  // the ...myParams will always an Array
     console.log(myParams);
     for (let ele of myParams) console.log(ele);
 };
-printArguments(1)
-printArguments('1', 'us', [1,2,3], {cat: 'miao'});
+// printArguments(1)
+// printArguments('1', 'us', [1,2,3], {cat: 'miao'});
+
+
+// Nested loop
+// loop inside loop
+
+for (let i = 1; i < 6; i++) {
+    // console.log('i ==>',i);
+    // for (let j = 1; j < 4; j++) console.log('j ==>', j)
+};
+
+// Create a function named getEvenNumbers accept a 2D array as an argument,
+//   and return the even numbers in an array.
+  const arrayInsideOfAnArray = [
+    [1, 2, 1, 24], 
+    [8, 11, 9, 4],
+    [7, 0, 7, 27],
+    [7, 4, 28, 14], 
+    [3, 10, 26, 7, 2]
+];
+const getEvenNumbers = arr => {
+    let arrEvenNum = [];
+    for (let eleLv1 of arr) {
+        for (let eleLv2 of eleLv1) {
+            arrEvenNum.indexOf(eleLv2) === -1 && eleLv2 % 2 === 0
+            ? arrEvenNum.push(eleLv2) : null;
+        };
+    };
+    return arrEvenNum;
+};
+// console.log(getEvenNumbers(arrayInsideOfAnArray)); // ==> [2,24,8,4,0,28,14,10,26]
