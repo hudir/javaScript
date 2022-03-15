@@ -110,9 +110,27 @@ let myRegex = /[a-z0-9]/;
 // console.log('BadUs3rnam3'.match(userCheck));
 // console.log('A1'.match(userCheck));
 
-let quit = "qu";
-let noquit = "qt";
-let quRegex= /q(?=u)/;
-let qRegex = /q(?!u)/;
-console.log(quit.match(quRegex));
-noquit.match(qRegex);
+// let quit = "qu";
+// let noquit = "qt";
+// let quRegex= /q(?=u)/;
+// let qRegex = /q(?!u)/;
+// console.log(quit.match(quRegex));
+// noquit.match(qRegex);
+
+// let password = "abc123";
+// let checkPass = /(?=\w{3,6})(?=\D*\d)/;
+// console.log(checkPass.test(password));
+
+
+// let sampleWord = "astr1on11aut";
+// let pwRegex = /(?=\w{6})(?=\D*\d{2})/; // Change this line
+// let result = pwRegex.test(sampleWord);
+// console.log(result);
+
+let n = 6
+let str = '';
+for (let i = 1; i <= n; i++) {
+      console.log(`${n}`.repeat(i)); 
+};
+
+

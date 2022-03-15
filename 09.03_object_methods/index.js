@@ -155,4 +155,25 @@ const arrayToObject_forOf_entries = (arr1, arr2) => {
 //    console.log(arrayToObject_forOf_entries(['name', 'age', 'email'], ['Jon', 29, 'jon@gmail.com'])) // ==> {name:'Jon', age:29, email:'jon@gmail.com'}
 //    console.log(arrayToObject_forOf_entries(['name', 'color', 'year'], ['BMW', 'Black', 2005])) // ==> {name:'BMW', color:'Black', year:2005}
 
-   console.log(['name', 'color', 'year'].entries())
+//    console.log(['name', 'color', 'year'].entries())
+
+
+var arr = ["a", "b", "c"];
+var iterator = arr.entries();
+// undefined
+let arr1 = [];
+for (let e of iterator) {
+    arr1.push(e);
+    // console.log(e);
+};
+// console.log(arr1)
+
+// [0, "a"]
+// [1, "b"]
+// [2, "c"]
+
+// https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array/entries
+// array like object with random key ordering
+
+const anObj = { 100: 'a', 2: 'b', 7: 'c' };
+console.log(Object.entries(anObj)); // [ ['2', 'b'], ['7', 'c'], ['100', 'a'] ]
