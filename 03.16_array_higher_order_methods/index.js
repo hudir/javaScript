@@ -27,6 +27,8 @@ let obj = {
 
 
 // Map() method creates a new array with the results of calling a provided function on every ele in the calling
+// Map() dot not execute the function for array elements without values.
+// Map() does not change the original array.
 
                 //   element form the arr |
 // const result = arr.map(function(item, index, array) {
@@ -85,3 +87,31 @@ let callbackGreeting = function(ele, i) {
 let sliceAndGreeting = names.slice(1).map(callbackGreeting);
 // console.log(sliceAndGreeting); //  [ '1 - Hallo Uri', '2 - Hallo Franko' ]
 
+/* console.log(names.map((ele, index) => {
+    if (index > 1) {
+        return ele;
+    };
+}));  // [ undefined, undefined, 'Franko' ]
+
+console.log(names.map((ele, index) => {
+    if (index > 1) {
+        return ele;
+    } else {
+        return 'Index < 2'
+    };
+}));  // [ undefined, undefined, 'Franko' ] */
+
+
+// using map to reformat object element in an array
+const newArray = [
+    {key: 1, value: 10},
+    {key: 2, value: 20},
+    {key: 3, value: 30},
+];
+const reformat_map = (ele, i) => {
+    let output = {};
+//     {      '1'   :  10  }
+    output[ele.key] = ele.value;
+    return output;
+};
+// console.log(newArray.map(reformat_map));  // [ { '1': 10 }, { '2': 20 }, { '3': 30 } ]
