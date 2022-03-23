@@ -1,0 +1,51 @@
+// countdown using for loop
+
+for (let i = 10; i > 0; i--) {
+    // console.log(i)
+}
+
+function countdown(i = 10) {
+    if (i < 0) return;
+    console.log(i);
+    i--;
+    return countdown(i)
+}
+// countdown();
+
+function countup(i = 0) {
+    if (i > 10) return;
+    console.log(i);
+    return countup(i + 1);
+};
+// countup();
+
+function countup2(i = 0) {
+    if (i <= 10) {
+        console.log(i);
+        i++;
+        return countup2(i);
+    } else console.log('we are done!')
+};
+// countup2()
+
+// factorial 5 = 5 
+
+function factorial(num) {
+    let sum = 1;
+    for (let i = 1; i <= num; i++) {
+        sum *= i;
+    };
+    return sum;
+};
+// console.log(factorial(3));
+
+
+let res = 1, i = 1;
+function factorial2(num) {
+    if (num === 1) return 1;
+    // res *= num;
+    // num--;
+    // return factorial2(num);
+    return (num * factorial2(num-1));
+};
+// console.log(factorial2(3))
