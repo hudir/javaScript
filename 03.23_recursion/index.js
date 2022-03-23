@@ -49,3 +49,9 @@ function factorial2(num) {
     return (num * factorial2(num-1));
 };
 // console.log(factorial2(3))
+
+function printString() {
+    console.log('ABC');
+    printString();
+};
+// printString();
