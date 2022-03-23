@@ -211,7 +211,32 @@ function callTheNumber() {
   }
   
   const callInnerFunctions = callTheNumber();
-  console.log(callInnerFunctions[0]()); // 0
-  console.log(callInnerFunctions[1]()); // 1
-  console.log(callInnerFunctions[2]()); // 2
-  console.log(callInnerFunctions[3]()); // 3
+  // console.log(callInnerFunctions[0]()); // 0
+  // console.log(callInnerFunctions[1]()); // 1
+  // console.log(callInnerFunctions[2]()); // 2
+  // console.log(callInnerFunctions[3]()); // 3
+
+  // -------------------# ------------
+
+  function makeTitler(x) {
+
+    function title(y) {
+    
+    return `${x} ${y}`;
+    
+    };
+    
+    return title;
+    
+    }
+    let mrTitle = makeTitler("Mr.");
+    
+    let msTitle = makeTitler("Ms.");
+    
+    console.log(msTitle("Lara"));  //  Ms. Lara
+    
+    console.log(mrTitle("David"));  // Mr. David
+    
+    console.log(makeTitler("Dr.")("John"));  // Dr. John
+    
+    console.log(makeTitler("Prof.")("John")); // Prof. John
