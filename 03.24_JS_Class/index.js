@@ -59,16 +59,83 @@ let  store = ''
      if (str == '') return str;
 
      let rest = str.slice(1)
-
-     
+  
      console.log('i cut first: ', str[0],', and get rest: ' , rest, );
      console.log('i will deal rest tomorrow, and now i have: ', store += str[0]);
-     console.log('----------------  ---------------- ')
-     console.log('-------- 1 day later -------- ')
-     console.log('----------------  ---------------- ')
-
+     console.log('      ----------------  ---------------- ')
+     console.log('      ----------- 1 day later ---------- ')
+     console.log('      ----------------  ---------------- ')
 
      return rev(rest) + str[0];
  }
 
- console.log(rev('hello woulddd'))
+ console.log(rev('hello woulddd'));
+
+/*  
+i cut first:  h , and get rest:  ello woulddd
+i will deal rest tomorrow, and now i have:  h
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  e , and get rest:  llo woulddd
+i will deal rest tomorrow, and now i have:  he
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  l , and get rest:  lo woulddd
+i will deal rest tomorrow, and now i have:  hel
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  l , and get rest:  o woulddd
+i will deal rest tomorrow, and now i have:  hell
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  o , and get rest:   woulddd
+i will deal rest tomorrow, and now i have:  hello
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:    , and get rest:  woulddd
+i will deal rest tomorrow, and now i have:  hello 
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  w , and get rest:  oulddd
+i will deal rest tomorrow, and now i have:  hello w
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  o , and get rest:  ulddd
+i will deal rest tomorrow, and now i have:  hello wo
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  u , and get rest:  lddd
+i will deal rest tomorrow, and now i have:  hello wou
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  l , and get rest:  ddd
+i will deal rest tomorrow, and now i have:  hello woul
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  d , and get rest:  dd
+i will deal rest tomorrow, and now i have:  hello would
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  d , and get rest:  d
+i will deal rest tomorrow, and now i have:  hello wouldd
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+i cut first:  d , and get rest:  
+i will deal rest tomorrow, and now i have:  hello woulddd
+      ----------------  ---------------- 
+      ----------- 1 day later ---------- 
+      ----------------  ---------------- 
+dddluow olleh
+*/
