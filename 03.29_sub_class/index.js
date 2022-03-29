@@ -35,3 +35,19 @@ console.log(stud1)
 
 // const pers1 = new Person('Franko', 'Duessrdorf', 'e10333'); // Person class don't have studentID
 // console.log(pers1)
+
+
+
+function maskify(str) {
+    let arr = str.split('')
+    return arr.map((el,i)=> {
+        if (i < arr.length - 4) return '#';
+        return el;
+    }).join('');
+};
+
+console.log(maskify("Nananananananananananananananana Batman!"));
+console.log(maskify("4556364607935616"));
+console.log(maskify("1"));
+
+// return masked string function maskify(cc) { cc = cc.toString(); if (cc.length>4) { for (let i = 0; i < cc.length - 4; i++) { cc = cc.replace(cc[i], "#"); } return cc }else{ return cc } } console.log(maskify(1)) 
