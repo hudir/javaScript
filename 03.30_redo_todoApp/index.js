@@ -78,7 +78,7 @@ class ToDos {
             input.forEach((el,i)=>{
                 if (i%2==0) this.toDoStore[el-1] = input[i+1];
             });   
-        }  return 'error, unknown data';     
+        }  else return 'error, unknown data';     
     };
 
   }
