@@ -3,7 +3,18 @@ class Person {
         this.name = name;
         this.address = address;
         this.occupation = 'web develepor';
-        this.property = 'i will show in the class Student'
+        this.property = 'i will show in the class Student';
+        let bankID = 12323323;
+
+
+        this.changeBankID = function(newID){
+            bankID=newID
+            return bankID;
+        };
+
+        this.getBankID = function(){
+            return bankID;
+        };
     };
 
     greet() {
@@ -23,18 +34,30 @@ class Student extends Person {
     };
 
     // overriding Person greet
-    greet() {
-        console.log(`Hello Student ${this.name}`)
-        console.log(`welcome to your campus in ${this.address} from Student`)
-    };
+    // greet() {
+    //     console.log(`Hello Student ${this.name}`)
+    //     console.log(`welcome to your campus in ${this.address} from Student`)
+    // };
 };
 
 const stud1 = new Student('Max', 'Berlin', 'q1234', 'student');
-stud1.greet();
-console.log(stud1)
+// stud1.greet();
+
+const hudir =  new Person('Yang','Berlin');
+hudir.changeBankID(9527)
+console.log(hudir.getBankID())
+
+
 
 // const pers1 = new Person('Franko', 'Duessrdorf', 'e10333'); // Person class don't have studentID
 // console.log(pers1)
+
+
+
+
+
+
+
 
 
 
@@ -46,8 +69,8 @@ function maskify(str) {
     }).join('');
 };
 
-console.log(maskify("Nananananananananananananananana Batman!"));
-console.log(maskify("4556364607935616"));
-console.log(maskify("1"));
+// console.log(maskify("Nananananananananananananananana Batman!"));
+// console.log(maskify("4556364607935616"));
+// console.log(maskify("1"));
 
 // return masked string function maskify(cc) { cc = cc.toString(); if (cc.length>4) { for (let i = 0; i < cc.length - 4; i++) { cc = cc.replace(cc[i], "#"); } return cc }else{ return cc } } console.log(maskify(1)) 
