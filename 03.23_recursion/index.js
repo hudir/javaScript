@@ -60,7 +60,7 @@ function printString() {
 // ---------------------- https://www.youtube.com/watch?v=oBt53YbR9Kk&t=8732s ------------------
 
 const fib = n => {
-    if (n <= 2) return 1;
+    if (n <= 2) return 1;56
     return fib(n-1) + fib(n-2);
 };
 
