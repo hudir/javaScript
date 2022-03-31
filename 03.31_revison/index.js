@@ -204,17 +204,27 @@ const numbers = [
 
 
 
+// if there is unknowen level of Array
+const numbersUn = [
+    [1, [ 2, [8, 54]]],
+    [3, 8, 3, 10, 13],
+    [7, 45]
+  ];
+
  let res = []
 function getOddNumbers(arr) {
     if (!arr[0]) return 0;
 
-    if (Array.isArray(arr[0])) return getOddNumbers(arr[0]);
+    if (typeof arr[0]== 'number') {
+        res.push(arr.shift());
+        return getOddNumbers(arr);  
+    } else if (Array.isArray(arr[0])) {
+        getOddNumbers(arr.shift());
+        return getOddNumbers(arr);
+    }
 
-    res.push(arr.shift())
-
-    return getOddNumbers(arr);  
 };
-//   getOddNumbers(numbers);
-//   console.log(res)
+  getOddNumbers(numbersUn);
+  console.log(res)
   // output ==> [1, 3, 5, 13, 7, 45]
   
