@@ -212,19 +212,19 @@ const numbersUn = [
   ];
 
  let res = []
-function getOddNumbers(arr) {
+function getAllElementFromUnknownLevelNestedArray(arr) {
     if (!arr[0]) return 0;
 
     if (typeof arr[0]== 'number') {
         res.push(arr.shift());
-        return getOddNumbers(arr);  
+        return getAllElementFromUnknownLevelNestedArray(arr);  
     } else if (Array.isArray(arr[0])) {
-        getOddNumbers(arr.shift());
-        return getOddNumbers(arr);
+        getAllElementFromUnknownLevelNestedArray(arr.shift());
+        return getAllElementFromUnknownLevelNestedArray(arr);
     }
 
 };
-  getOddNumbers(numbersUn);
-  console.log(res)
+getAllElementFromUnknownLevelNestedArray(numbersUn);
+//   console.log(res)
   // output ==> [1, 3, 5, 13, 7, 45]
   
