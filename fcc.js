@@ -130,7 +130,69 @@ let myRegex = /[a-z0-9]/;
 let n = 6
 let str = '';
 for (let i = 1; i <= n; i++) {
-      console.log(`${n}`.repeat(i)); 
+      // console.log(`${n}`.repeat(i)); 
 };
 
 
+
+ const transpose = (arr) => {
+  //throw new Error('Remove this statement and implement this function');
+  let res = [];
+
+  if (arr.length ==1) {
+    arr[0].split('').forEach((el,i)=>{
+    res.push(el)
+  });
+  return res;
+  }
+  
+  let maxLen = Math.max(...arr.map(el=>el.length));
+
+  console.log(maxLen)
+  for(let i=0;i < maxLen;i++) {
+    let tem = '';
+
+    arr.forEach((el,index)=>{
+      if (el.length <= i) tem+=' ' 
+      else tem+= el[i] 
+    });
+
+    if (i == maxLen -1) tem =tem.trimRight()
+    res.push(tem)
+    
+  }
+  return res;
+};
+
+// console.log(transpose([
+//   'Chor. Two households, both alike in dignity,',
+//   'In fair Verona, where we lay our scene,',
+//   'From ancient grudge break to new mutiny,',
+//   'Where civil blood makes civil hands unclean.',
+//   'From forth the fatal loins of these two foes',
+//   "A pair of star-cross'd lovers take their life;",
+//   "Whose misadventur'd piteous overthrows",
+//   "Doth with their death bury their parents' strife.",
+//   "The fearful passage of their death-mark'd love,",
+//   "And the continuance of their parents' rage,",
+//   "Which, but their children's end, naught could remove,",
+//   "Is now the two hours' traffic of our stage;",
+//   'The which if you with patient ears attend,',
+//   'What here shall miss, our toil shall strive to mend.',
+// ]))
+
+
+function cutSpace(){
+  // let count = true
+
+    // let temArr =tem.split("");
+
+    // for (let i=temArr.length-1; i>-1;i--) {
+    //   if (!temArr[i] && count) temArr.pop();
+      
+    //   else {
+    //   count =false
+        
+    //   };   
+    // };
+}
