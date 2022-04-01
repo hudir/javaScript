@@ -182,17 +182,18 @@ for (let i = 1; i <= n; i++) {
 // ]))
 
 
-function cutSpace(){
-  // let count = true
+function cutSpace(tem){
+    let temArr =tem.split("");
 
-    // let temArr =tem.split("");
-
-    // for (let i=temArr.length-1; i>-1;i--) {
-    //   if (!temArr[i] && count) temArr.pop();
-      
-    //   else {
-    //   count =false
-        
-    //   };   
-    // };
+    for (let i=temArr.length-1; i>-1;i--) {
+      // console.log(i)
+      if (temArr[i] == ' ') {
+        console.log(i)
+        temArr.pop()
+      } else {
+      break;
+      };   
+    };
+    return [temArr.join('')]
 }
+console.log(cutSpace('123    '));
