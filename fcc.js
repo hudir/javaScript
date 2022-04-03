@@ -196,4 +196,8 @@ function cutSpace(tem){
     };
     return [temArr.join('')]
 }
-console.log(cutSpace('123    '));
+// console.log(cutSpace('123    '));
+
+(function () {
+  console.log("Chirp, chirp!");
+})();
