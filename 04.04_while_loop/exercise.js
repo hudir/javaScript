@@ -103,7 +103,7 @@ function jsonToObj(json){
    for(let i=0;i<json.length;i++){
        if(json[i] === '"') {
            let j = i+1,
-           keyIndexBegin = i+1,
+           keyIndexBegin = j,
            keyIndexEnd=0,
            valueIndexBegin=0,
            valueIndexEnd=0;
@@ -130,9 +130,12 @@ function jsonToObj(json){
    };  // end for(let i=0;i<json.length;i++)
    return obj;
 };
-// console.log(jsonToObj(`{"userId": 1,"id": 1,"title": "delectus aut autem","completed": false}`))
+console.log(jsonToObj(`{"userId": 1,"id": 1,"title": "delectus aut autem","completed": false}`))
 // console.log(jsonToObj(`{"userId": 1,"id": 3,"title": "fugiat veniam minus","completed": false}`))
-// console.log(jsonToObj(`{"userId": 1,"id": 4,"title": "et porro tempora","completed": true}`))
+// console.log(typeof jsonToObj(`{"userId": 1,"id": 4,"title": "et porro tempora","completed": true}`));
+// { userId: '1', id: '4', title: 'et porro tempora', completed: 'true' }
+
+// console.log(JSON.parse(`{"userId": 1,"id": 4,"title": "et porro tempora","completed": true}`));
 
 
 const data =`
@@ -263,4 +266,15 @@ const food = JSON.parse(data);
 const arr =[];
 for(let key in food) food[key].forEach(el => arr.push(el.title));
 
-console.log(arr)
+// console.log(arr)
+// [
+//     'Deliciously Decadent',
+//     'Ridiculous Raspberry',
+//     'Famous NY Cheese Cake',
+//     'Ginger Snaps',
+//     'Short Bread',
+//     'Millionaires',
+//     'Sourdough',
+//     'Beautiful Baguettes',
+//     'The best thing since sliced bread'
+//   ]
