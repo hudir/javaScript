@@ -334,7 +334,7 @@ const markTodosToday = [
     },
   ];
 
-  const marktodosYesterday = [
+  const markTodosYesterday = [
     {
         title: "watch a movie",
         completed: false,
@@ -347,7 +347,7 @@ const markTodosToday = [
 
 // A. Make an array that contains the items from both arrays, use the spread operator (3 dots)
 
-const markToDo = [...markTodosToday, ...marktodosYesterday];
+const markToDo = [...markTodosToday, ...markTodosYesterday];
 // console.log(markToDo);
 
 // B. Mark has completed the "call a friend to do" Update the array and make this todo completed.
@@ -419,38 +419,53 @@ let userName = 'Marry';
 
 
 
+
+
 // -------------------------------md 04----------------------------
 // ## Javascript Assignments
 // ![enter image description here](https://media.giphy.com/media/AOSwwqVjNZlDO/giphy.gif)
 
 //  1. Create a function to merge two arrays.
-//  this function should have 2 arguments: exampe :
+//  this function should have 2 arguments: example :
 
-// concat([4, 8, 9], [2, 6, 8]) ➞ [4, 8, 9, 2, 6, 8]
+const concat = (...arrOfArr) => arrOfArr.reduce((acc,el)=>acc.concat(el),[]);
+
+// console.log(concat([4, 8, 9], [2, 6, 8], [1,3,5]))  // ➞ [4, 8, 9, 2, 6, 8]
+
 
 //  2. Create a function that accepts an array and returns the last item in the array.
+const getLast=arr=>arr.pop();
 
-// getLast([1, 2, 3]) ➞ 3
-// getLast(["cat", "rabbit", "penguin"]) ➞ "penguin"
+// console.log(getLast([1, 2, 3]));     // ➞ 3
+// console.log(getLast(["cat", "rabbit", "penguin"]));     // ➞ "penguin"
+
 
 //  3. Create a function that takes an array and a string as arguments and return the index of the string.
 
-// findIndex(["Hi", "FBW6", "DCI", "Hamburg"], "FBW6") ➞ 1
+const findIndex =(arr,str)=>{
+    return arr.indexOf(str) != -1 ? arr.indexOf(str) : `there is no ${str} in Array [${arr}]`;
+};
+
+// console.log(findIndex(["Hi", "FBW6", "DCI", "Hamburg"], "FBW6")) // ➞ 1
+// console.log(findIndex(["Hi", "FBW6", "DCI", "Hamburg"], "E10")) 
+
 
 //  4. create a function to Skip the Drinks with Too Much Sugar, this function takes in an array of drinks. Make sure the function only returns an array of drinks with no sugar in it or a little bit of sugar.
 // Drinks that contain too much sugar (in this challenge) are:
-
 //     Cola
 //    Fanta
 
-// skipSugarDrinks(["fanta", "cola", "water"]) ➞ [water]
+const skipSugarDrinks=arr=>arr.filter(el=> el!='cola' && el!='fanta')
+
+// console.log(skipSugarDrinks(["fanta", "cola", "water"])) // ➞ [water]
 
 
 //  5. Create a function that takes an array of 10 numbers (between 0 and 9) and returns a string of those numbers formatted as a phone number (e.g. **(222) 222-222**).
 //  Don't forget the space after the closing parenthesis.
 
-// formatPhoneNumber([0, 1, 5, 7, 5, 5, 4, 4, 6, 8]) ➞ "(015) 755-4468"
+const formatPhoneNumber = ([a,b,c,d,e,f,g,h,i,j]) => '('+a+b+c+') '+d+e+f+'-'+g+h+i+j;
 
+// console.log(formatPhoneNumber([0, 1, 5, 7, 5, 5, 4, 4, 6, 8])) // ➞ "(015) 755-4468"
 
 
 //  6. Write a function that returns the number of users in a chatroom based on the following rules:
@@ -459,44 +474,50 @@ let userName = 'Marry';
 //  - If there are 2 people, return `[user 1] and [user 2] online"`.
 //  - If there are `n>2` people, return the first two names and add `"and n-2 more online"`.
  
+
 //  7. Create a function that takes an array of names and returns an array where only the first letter of each name is capitalized.
-
-// capMe(["mansour", "franco", "daniel", "sara"]) ➞ ["Mansour", "Franco", "Daniel", "Sara"];
-// capMe(["lana", "KOSTAS", "mara", "steven"]) ➞ ["Lana", "Kostas", "Mara", "Steven"]
-
-
 // Notice in the second example above, "KOSTAS" is returned as "Kostas".
+
+const capMe = arr => arr.map(el=>el[0].toUpperCase()+el.slice(1).toLowerCase());
+
+// console.log(capMe(["mansour", "franco", "daniel", "sara"]));   // ➞ ["Mansour", "Franco", "Daniel", "Sara"];
+// console.log(capMe(["lana", "KOSTAS", "mara", "steven"]));   // ➞ ["Lana", "Kostas", "Mara", "Steven"]
+
 
 //  8. Write a function take two arguments ( object , string) that returns `true` if the object contains the specified string as a  key, and `false` otherwise. (Does the Object Contain a Given Key?)
 
-// keyFinder({ name: 'Rania', age: 37, id: 101 }, "address") ➞ false
-// keyFinder({ isProgrammer: true, city: 'Paris', hasKids: true }, "city") ➞ true
+const keyFinder =(obj,str) => str in obj;
+
+// console.log(keyFinder({ name: 'Rania', age: 37, id: 101 }, "address"));   // ➞ false
+// console.log(keyFinder({ isProgrammer: true, city: 'Paris', hasKids: true }, "city"));   // ➞ true
 
 
 //  9. Write a function that converts an object into an array of keys and values.
 
-// objectToArray({
-//   D: 1,
-//   B: 2,
-//   C: 3
-// }) ➞ [["D", 1], ["B", 2], ["C", 3]]
+const objectToArray = obj => {
+    let arr =[];
+    for(let key in obj){
+        arr.push([key,obj[key]]);
+    };
+    return arr;
+};
 
-// objectToArray({
-//   likes: 2,
-//   dislikes: 3,
-//   followers: 10
-// }) ➞ [["likes", 2], ["dislikes", 3], ["followers", 10]]
+// console.log(objectToArray({D: 1,B: 2,C: 3})) //➞ [["D", 1], ["B", 2], ["C", 3]]
+// console.log(objectToArray({likes: 2,dislikes: 3,followers: 10})) // ➞ [["likes", 2], ["dislikes", 3], ["followers", 10]]
+
 
 // 10. Create the function that takes an array with objects and returns the sum of people's budgets.
 
-// getBudgets([
+const getBudgets=arr=>arr.reduce((acc,obj)=>acc+obj.budget,0);
+
+// console.log(getBudgets([
 //   { name: "John", age: 21, budget: 23000 },
 //   { name: "Steve",  age: 32, budget: 40000 },
 //   { name: "Martin",  age: 16, budget: 2700 }
-// ]) ➞ 65700
+// ])) // ➞ 65700
 
-// getBudgets([
+// console.log(getBudgets([
 //   { name: "John",  age: 21, budget: 29000 },
 //   { name: "Steve",  age: 32, budget: 32000 },
 //   { name: "Martin",  age: 16, budget: 1600 }
-// ])
+// ])) // ➞ 62600
