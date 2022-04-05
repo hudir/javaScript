@@ -56,7 +56,7 @@ const mostCompleted1 = obj => {
     };
 
     // console.log(newObj); // { Mark: 3, Lara: 2, Michael: 2 }
-    return `${winner} has done the most todos: ${most}.`;
+    return `${winner} has done the most tasks: ${most}.`;
 };
 // console.log(mostCompleted1(data1));
 
@@ -166,6 +166,7 @@ function completed(arr){
     return arr.filter(el=>el.completed===true);
 };
 // console.log(completed(marksTodos));
+// console.log(marksTodos)
 
 function updateTodo(str,arr){
     return arr.map(el=>{
@@ -300,7 +301,9 @@ let str3 = "pEeaCcoCcKk"
 let str4 = "GgirRaFfFfe"
 
 // A. Make a function that removes all the uperCase letters from the string. convert each string to an array and use an array method
-const removeUpperCase = str => str.split('').filter(el=>el.toUpperCase() !== el).join('');
+
+const removeUpperCase = str => str.split('').filter(el=> el.toUpperCase() !== el).join('');
+
 // console.log(removeUpperCase(str1));
 // console.log(removeUpperCase(str2));
 // console.log(removeUpperCase(str3));
