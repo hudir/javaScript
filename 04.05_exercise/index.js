@@ -468,11 +468,79 @@ const formatPhoneNumber = ([a,b,c,d,e,f,g,h,i,j]) => '('+a+b+c+') '+d+e+f+'-'+g+
 // console.log(formatPhoneNumber([0, 1, 5, 7, 5, 5, 4, 4, 6, 8])) // ➞ "(015) 755-4468"
 
 
+
+
+
+
+let chatroomUsers = [
+    {
+        name : "Mark",
+        age : 32,
+        country : "Spain"
+    },
+    {
+        name : "John",
+        age : 35,
+        country : "Sweden"
+    },
+     {
+        name : "Emily",
+        age : 24,
+        country : "Germany"
+    },
+    {
+        name : "Myriam",
+        age : 30,
+        country : "Sudan"
+    },
+    {
+        name : "Alfred",
+        age : 28,
+        country : "Argentina"
+    },
+    {
+        name : "Byron",
+        age : 23,
+        country : "Slovenia"
+    }
+];
 //  6. Write a function that returns the number of users in a chatroom based on the following rules:
 //  - If there is no one, return `"no one online"`.
 //  - If there is 1 person, return `"[user1] online"`.
 //  - If there are 2 people, return `[user 1] and [user 2] online"`.
 //  - If there are `n>2` people, return the first two names and add `"and n-2 more online"`.
+
+function chatroomStatus(arrOfObj){
+    const len = arrOfObj.length;
+    switch(len){
+        case 0:
+        return "no one online";
+
+        case 1: 
+        return `[${arrOfObj[0].name}] from ${arrOfObj[0].country} online]`;
+
+        case 2:
+        return `[${arrOfObj[0].name}] and [${arrOfObj[1].name}] online]`;
+
+        default:
+        return `[${arrOfObj[0].name}], [${arrOfObj[1].name}] and ${len-2} more online]`;
+    };
+};
+
+// console.log(chatroomStatus(chatroomUsers))
+// console.log(chatroomStatus([]))
+// console.log(chatroomStatus([{name : "Emily",age : 24,country : "Germany"}]))
+
+// console.log(chatroomStatus([{
+//     name : "Alfred",
+//     age : 28,
+//     country : "Argentina"
+// },
+// {
+//     name : "Byron",
+//     age : 23,
+//     country : "Slovenia"
+// },]))
  
 
 //  7. Create a function that takes an array of names and returns an array where only the first letter of each name is capitalized.
