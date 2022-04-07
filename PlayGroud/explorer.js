@@ -32,3 +32,16 @@ const numbersUn = [
   
 
   
+//answer form nico
+const createGrid1 = function (size, char) {
+  let newArray = [];
+  let nestedArray = []     // that was so smart, this two are in function scope, so after for loop,it like [newArray,newArray,newArray]
+  for (let i = 0; i < size; i++) {       //   and each time in looping, we also update newArray, and all the value referes to it will change 
+  newArray.push(char);
+  nestedArray.push(newArray);
+  console.log(newArray)
+  console.log(nestedArray,111)
+  }
+  return nestedArray;
+  }; 
+console.log(createGrid1(3, "*"));
