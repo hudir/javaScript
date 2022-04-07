@@ -94,6 +94,14 @@ class AttackSkill {
       this.requiredMagic = requiredMagic;
       this.damage = damage;
     };
+
+    help(){
+        console.log(`
+        Skill Name: ${this.nameOfAttack}
+        Required Magic: ${this.requiredMagic}
+        Damage: ${this.damage}
+        `);
+    } 
   };
   
 
@@ -190,3 +198,5 @@ bulbasaur.attackWithRandomSkill(pikachu);
 
 pikachu.showStatus();
 bulbasaur.showStatus();
+
+fireBall.help()
