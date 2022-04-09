@@ -274,4 +274,79 @@ const new_s = s.myFilter(function(item) {
 function urlSlug(title) {
   return title.split(' ').join('-').toLowerCase();
   }
-  console.log(' Winter Is  Coming'.split(' ').filter(el=>el!==''))
+  // console.log(' Winter Is  Coming'.split(' ').filter(el=>el!==''))
+
+
+  function sumAll(arr) {
+    const newA = arr.sort((a,b)=>a-b);
+    let sum = 0;
+    for(let i=newA[0];i<=newA[1];i++) sum+=i;
+    console.log(sum)
+    return sum;
+    }
+    
+    // console.log(sumAll([1, 4]))
+
+
+    function destroyer(...arr) {
+      return arr[0].filter(el=>{
+        let counter = 0
+       for(let i=1;i<arr.length;i++){
+        
+         if (arr[i] == el) counter++;
+       }
+      
+       if (counter == 0) return el;
+      });
+    }
+    
+    destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
+
+  /*   function whatIsInAName(collection, source) {
+      let arr = [];
+      // Only change code below this line
+       arr = collection.filter(obj => {
+        let check =0;
+        for(let key in obj) {
+          // if(!(key in source)) check++;
+          // if(obj[key] != source[key]) check++;
+          // console.log(check)
+        };
+        if(check==0) return obj
+      })
+
+      
+      arr= arr.filter(obj=> {
+        let check = 0;
+        for(let key in source) {
+          if (!(key in obj)) check++
+        };
+        if (check ===0) return obj
+      })
+      console.log(arr)
+    
+      // Only change code above this line
+      return arr;
+    }
+    
+   
+    whatIsInAName([{ "apple": 1, "bat": 2 }, { "bat": 2 }, { "apple": 1, "bat": 2, "cookie": 2 }], { "apple": 1, "bat": 2 }) */
+
+
+    function whatIsInAName(collection, source) {
+      const arr = [];
+      // Only change code below this line
+     collection.forEach(obj=>{
+       let x =0;
+       for(let key in source){
+         if (source[key]==obj[key]) x++;
+       }
+       if (x==Object.keys(source).length) arr.push(obj)
+     })
+      // Only change code above this line
+      console.log(arr)
+      return arr;
+    }
+
+    whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })
