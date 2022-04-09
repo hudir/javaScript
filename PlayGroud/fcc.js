@@ -257,7 +257,7 @@ Array.prototype.myFilter = function(callback) {
   const newArray = [];
   this.forEach(el=>{
     if (callback(el)) {
-      console.log(el)
+      // console.log(el)
       newArray.push(el);
     }
   });
@@ -269,4 +269,9 @@ const new_s = s.myFilter(function(item) {
   return item % 2 === 1;
 });
 
- console.log(new_s)
+//  console.log(new_s)
+
+function urlSlug(title) {
+  return title.split(' ').join('-').toLowerCase();
+  }
+  console.log(' Winter Is  Coming'.split(' ').filter(el=>el!==''))
