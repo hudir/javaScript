@@ -245,4 +245,28 @@ const finalTabs = socialWindow
   .tabOpen() // Open a new tab for cat memes
   .join(videoWindow.tabClose(2)) // Close third tab in video window, and join
   .join(workWindow.tabClose(1).tabOpen());
-console.log(finalTabs.tabs);
+// console.log(finalTabs.tabs);
+
+
+
+
+const s = [23, 65, 98, 5];
+
+Array.prototype.myFilter = function(callback) {
+  // Only change code below this line
+  const newArray = [];
+  this.forEach(el=>{
+    if (callback(el)) {
+      console.log(el)
+      newArray.push(el);
+    }
+  });
+  // Only change code above this line
+  return newArray;
+};
+
+const new_s = s.myFilter(function(item) {
+  return item % 2 === 1;
+});
+
+ console.log(new_s)
