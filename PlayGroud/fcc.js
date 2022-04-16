@@ -345,8 +345,68 @@ function urlSlug(title) {
        if (x==Object.keys(source).length) arr.push(obj)
      })
       // Only change code above this line
-      console.log(arr)
+      // console.log(arr)
       return arr;
     }
 
     whatIsInAName([{ first: "Romeo", last: "Montague" }, { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }], { last: "Capulet" })
+
+
+
+
+    function spinalCase(str) {
+      let arr = str.split(/[ _-]/),
+      arrN = [];
+      arr.forEach((el,i)=>{
+        if(el.slice(1) === el.slice(1).toLowerCase()) {
+          arrN.push(el);
+        } else{
+          let indexStart=0;
+          el.split('').forEach((chr,j)=>{
+            if(j!==0 && chr !== chr.toLowerCase()){
+              arrN.push(el.slice(indexStart,j));
+              indexStart=j
+            } else if(j == el.length-1){
+              arrN.push(el.slice(indexStart,j+1));
+            };
+          })
+        }
+      })
+      // console.log(arrN)
+      return arrN.join('-').toLowerCase();
+    }
+    
+    
+    // console.log(spinalCase('This Is Spinal Tap'));
+    // console.log(spinalCase("The_Andy_Griffith_Show"))
+    // console.log(spinalCase("Teletubbies say Eh-oh"))
+    // console.log(spinalCase("AllThe-small Things"))
+    // console.log(spinalCase("thisIsSpinalTap"))
+
+    function translatePigLatin(str) {
+  
+      if(str[0]=='a'
+      ||str[0]=='e'
+      ||str[0]=='i'
+      ||str[0]=='o'
+      ||str[0]=='u'
+      ) {
+        return str+'way';
+      };
+      
+      for(let [i,el] of str.split('').entries()){
+          if(el[0]=='a'
+          ||el[0]=='e'
+          ||el[0]=='i'
+          ||el[0]=='o'
+          ||el[0]=='u'){  
+            return str.slice(i)+str.slice(0,i)+'ay';
+          } 
+      }
+    
+      return str+'ay'
+    }
+    
+    
+    console.log(translatePigLatin("california"));
+    console.log(translatePigLatin("rhythm"));
