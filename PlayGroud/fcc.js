@@ -408,5 +408,47 @@ function urlSlug(title) {
     }
     
     
-    console.log(translatePigLatin("california"));
-    console.log(translatePigLatin("rhythm"));
+    // console.log(translatePigLatin("california"));
+    // console.log(translatePigLatin("rhythm"));
+
+
+    function myReplace(str, before, after) {
+      return str.split(' ').map(el=>{
+        if(el.toLowerCase() == before.toLowerCase()) {
+          if(el.toLowerCase() == el) return after.toLowerCase() ;
+          return after[0].toUpperCase()+after.slice(1);
+        } else return el
+      }).join(' ');
+    }
+    
+    // console.log(myReplace("A quick brown fox jumped over the lazy dog", "jumped", "leaped"));
+
+
+    function pairElement(str) {
+
+      return str.split('').map(el=>{
+        switch (el) {
+          case 'A': return ['A', 'T'];
+          case 'T': return ['T', 'A'];
+          case 'C': return ["C", 'G'];
+          case 'G': return ['G', 'C']
+        }
+      });
+    }
+    
+    // console.log(pairElement("GCG"));
+
+
+
+    function fearNotLetter(str) {
+      let aToZ = 'abcdefghijklmnopqrstuvwxyz'.split('');
+      let index = aToZ.indexOf(str[0]);
+      console.log(aToZ.slice(index, index+str.length))
+      for(let [i,el] of aToZ.slice(index, index+str.length+1).entries()){
+        if (str[i] !== el) return el
+      }
+    }
+    
+    // console.log(fearNotLetter("abce"))
+    // console.log(fearNotLetter("abcdefghjklmno"))
+    // console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"))
