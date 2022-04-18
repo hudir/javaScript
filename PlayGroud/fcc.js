@@ -452,3 +452,180 @@ function urlSlug(title) {
     // console.log(fearNotLetter("abce"))
     // console.log(fearNotLetter("abcdefghjklmno"))
     // console.log(fearNotLetter("abcdefghijklmnopqrstuvwxyz"))
+
+
+    function uniteUnique(...arr) {
+      return arr.reduce((acc,el)=>{
+      acc.push(...el.filter((num,i) => !acc.includes(num) && el.indexOf(num) == i));
+      return acc
+      },[]);
+    }
+    // console.log(uniteUnique([1, 3, 2], [5, 2, 1, 4], [2, 1]));
+    // console.log(uniteUnique([1, 3, 2, 3], [5, 2, 1, 4], [2, 1]));
+
+
+    function convertHTML(str) {
+      return str.split('').map(el=>{
+        switch(el){
+          case '&': return '&amp;';
+          case '<': return '&lt;';
+          case '>': return '&gt;';
+          case '"': return '&quot;'+el.slice(1);
+          case `'`: return '&apos;'+el.slice(1);
+        }
+        return el
+      }).join('');
+    }
+    
+
+
+
+    function sumFibs(num) {
+      let arr = [1,1],i=2;
+      while(arr[i-1]+arr[i-2] <= num){
+        arr.push(arr[i-1]+arr[i-2]);
+        i++;
+      }
+      console.log(arr)
+      return arr.filter(el=>el%2!=0).reduce((x,y)=>x+y)
+    }
+    
+    function sumFibs1(num) {
+      let arr = [];
+      for(let i=0;i<9999;i++){
+        if (i==0 || i==1) {
+          arr.push(1);
+          continue;
+        };
+        if(arr[i-1]+arr[i-2] > num) break;
+        arr.push(arr[i-1]+arr[i-2]);
+      };
+      return arr.filter(el=>el%2!=0).reduce((x,y)=>x+y)
+    }
+    
+    
+  
+    // console.log(sumFibs1(1700));
+
+
+
+
+    function sumPrimes1(num) {
+      let arr=[];
+      for(let i=1;i<=num;i++){
+        let check = true;
+        for(let j=i-1;j>1;j--){
+          i%j === 0 ? check = false : null
+        }
+        check ? arr.push(i) : 0
+      } 
+      // console.log(arr)
+      return arr.reduce((x,y)=>x+y,0);
+    }
+    
+    // console.log(sumPrimes(10));
+    // console.log(Array(10 + 1).fill(true))
+
+    function sumPrimes(num) {
+      // Prime number sieve
+      let isPrime = Array(num + 1).fill(true);
+      // 0 and 1 are not prime
+      console.log(isPrime)
+      isPrime[0] = false;
+      isPrime[1] = false;
+      for (let i = 2; i <= Math.sqrt(num); i++) {
+        if (isPrime[i]) {
+          // i has not been marked false -- it is prime
+          for (let j = i * i; j <= num; j += i)
+            isPrime[j] = false;
+        }
+      }
+    
+      // Sum all values still marked prime
+      return isPrime.reduce(
+        (sum, prime, index) => prime ? sum + index : sum, 0
+      );
+    }
+
+
+    // function smallestCommons(arr) {
+    //   arr = arr.sort((a,b)=>a-b);
+    //   let num = arr[1];
+    //   for(let i = arr[0]; i<=arr[1];i++){
+    //     if(i==1) continue;
+        
+    //     let arrTem = [i,num].sort((a,b)=>a-b);
+        
+    //     for(let j=2;j<=arrTem[0];j++){
+    //           console.log(j)
+    //           if(arrTem[0]%j==0 && arrTem[1]%j==0) {
+    //             arrTem[0]=arrTem[0]/j;
+    //             arrTem[1]=arrTem[1]/j;
+    //             arrTem.push(j);
+    //             j--;
+                
+              
+    //         };
+          
+    //       num = arrTem.reduce((x,y)=>x*y) 
+    //     }
+    //   }
+    //   return num
+    // }
+    
+    // console.log(smallestCommons([1,5]));
+    // console.log(smallestCommons([2, 10]));
+    // console.log(smallestCommons([1,13]));
+    // console.log(smallestCommons([23,18]));
+
+    function smallestCommons1(arr) {
+      arr = arr.sort((a,b)=>a-b);
+
+      const isPrime = num => {
+        for(let i = 2;i<=Math.sqrt(num);i++){
+          if(num%i===0) return false;
+        }
+        return true;
+      };
+
+      let num = 1;
+      for(let i = arr[0]; i<=arr[1];i++){
+        if(i==1) continue;
+        if(isPrime(i) || isPrime(num)){ 
+          num*=i;
+        }
+        else {
+          let arrTem = [i,num].sort((a,b)=>a-b);
+          
+            for(let j=2;j<=arrTem[0];j++){
+              if(arrTem[0]%j==0 && arrTem[1]%j==0) {
+                arrTem[0]=arrTem[0]/j;
+                arrTem[1]=arrTem[1]/j;
+                arrTem.push(j);
+                j--;
+              }
+            };
+          num = arrTem.reduce((x,y)=>x*y) 
+        }
+      }
+      return num
+    }
+    
+    // console.log(smallestCommons1([1,218]));
+    // console.log(smallestCommons1([2, 10]));
+    // console.log(smallestCommons1([1,13]));
+
+
+   
+
+    const isPrime1 = num => {
+          for(let i = 2;i<=Math.sqrt(num);i++){
+            if(num%i===0) return false;
+          }
+          return true;
+        };
+
+        // console.log(isPrime1(1))
+
+
+        
