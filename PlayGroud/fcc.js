@@ -659,4 +659,69 @@ function steamrollArray(arr1) {
         }
     };
 }
+let text = String.fromCharCode(45);
 
+// console.log(text)
+
+
+function binaryAgent(str) {
+  return str.split(' ').map(el=>String.fromCharCode(parseInt(el,2))).join('');
+}
+
+// console.log(binaryAgent("01000001 01110010 01100101 01101110 00100111 01110100 00100000 01100010 01101111 01101110 01100110 01101001 01110010 01100101 01110011 00100000 01100110 01110101 01101110 00100001 00111111"));
+
+
+function truthCheck(collection, pre) {
+  return collection.every(el=>el[pre]) ? true : false;
+}
+
+// console.log(truthCheck([{id: 1, data: {url: "https://freecodecamp.org", name: "freeCodeCamp"}}, {id: 2, data: {url: "https://coderadio.freecodecamp.org/", name: "CodeRadio"}}, {id: null, data: {}}], "id"));
+
+function addTogether(x,y1) {
+  console.log( arguments.length )
+  if(typeof x == 'number' && typeof y1 == 'number') return x + y1
+  else if (typeof x == 'number' && !y1 && arguments.length == 1) return step2
+  
+  function step2(y){
+    if(typeof y == 'number') return x+y
+  };
+}
+
+// console.log(addTogether(2)([3]));
+
+
+const Person = function(firstAndLast) {
+  this.getFirstName = function(){
+    return firstAndLast.split(' ')[0];
+  }
+  this.getLastName = function(){
+    return firstAndLast.split(' ')[1];
+  }
+  this.getFullName = function(){
+    return firstAndLast;
+  }
+  this.setFirstName = function(first){
+    firstAndLast = first+firstAndLast.slice(firstAndLast.indexOf(' '));
+  }
+  this.setLastName = function(last){
+    firstAndLast = firstAndLast.slice(0,firstAndLast.indexOf(' ')+1) + last;
+  }
+  this.setFullName = function(firstAndLastNew){
+    firstAndLast = firstAndLastNew
+  }
+};
+
+const bob = new Person('Bob Ross');
+bob.setFirstName('Tom')
+bob.setLastName('Rp')
+// console.log(bob.getFullName());
+
+function orbitalPeriod(arr) {
+  const GM = 398600.4418;
+  const earthRadius = 6367.4447;
+  return arr.map(obj=>({name: obj.name, orbitalPeriod: 
+    Math.round(Math.sqrt((earthRadius+obj.avgAlt)**3/GM)*2*Math.PI) 
+  }));
+}
+
+// console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
