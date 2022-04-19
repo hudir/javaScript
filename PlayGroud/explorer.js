@@ -30,8 +30,27 @@ const numbersUn = [
 //    45
 //  ]
   
+function steamrollArray(arr1) {
+  let res = [], arrTem = arr1.map(el=>el);
+    getAllElementFromUnknownLevelNestedArray(arrTem);
+    return res;
+
+    function getAllElementFromUnknownLevelNestedArray(arr) {
+        if (!arr[0]) return null;
+         if (Array.isArray(arr[0])) {
+            getAllElementFromUnknownLevelNestedArray(arr.shift());
+            return getAllElementFromUnknownLevelNestedArray(arr);
+        } else {
+            res.push(arr.shift());
+            return getAllElementFromUnknownLevelNestedArray(arr);  
+        }
+    };
+}
 
   
+
+
+
 //answer form nico
 const createGrid1 = function (size, char) {
   let newArray = [];

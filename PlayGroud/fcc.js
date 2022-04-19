@@ -628,4 +628,35 @@ function urlSlug(title) {
         // console.log(isPrime1(1))
 
 
-        
+
+
+
+        function dropElements(arr, func) {
+          let first = arr.filter(el=>{
+            if(func(el)) return el
+          })[0];
+          let index = arr.indexOf(first)
+          return arr.slice(index)
+          }
+
+// console.log(dropElements([1, 2, 3], function(n) {return n < 3; }))
+// console.log(dropElements([0, 1, 0, 1], function(n) {return n === 1;}))
+
+
+function steamrollArray(arr1) {
+  let res = [], arrTem = arr1.map(el=>el);
+    getAllElementFromUnknownLevelNestedArray(arrTem);
+    return res;
+
+    function getAllElementFromUnknownLevelNestedArray(arr) {
+        if (!arr[0]) return null;
+         if (Array.isArray(arr[0])) {
+            getAllElementFromUnknownLevelNestedArray(arr.shift());
+            return getAllElementFromUnknownLevelNestedArray(arr);
+        } else {
+            res.push(arr.shift());
+            return getAllElementFromUnknownLevelNestedArray(arr);  
+        }
+    };
+}
+
